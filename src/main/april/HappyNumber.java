@@ -27,22 +27,21 @@ public class HappyNumber {
 	 */
     public boolean isHappyUsingSetAndSplitList(int n) {
 
-    	Set<Integer> hasValue = new HashSet<>();
-    	hasValue.add(n);
-        
-    	while(n!=1) {
-    		int num=0;
-    		int mod=0;
-        	while(n>0) {
-        		mod=n%10;
-        		num = num + mod*mod;
-        		n=n/10;
-        	}
-        	n=num;
-        	if(hasValue.contains(n) == true) return false;
-        	else hasValue.add(n);
-        }
-    	hasValue.clear();
-        return true;
+	        Set<Integer> hasValue = new HashSet<>();
+	    	hasValue.add(n);
+	        
+	    	while(n!=1) {
+	    		int num=0;
+	        	while(n>0) {
+	        		num += Math.pow(n%10, 2);
+	        		n=n/10;
+	        	}
+	        	n=num;
+	        	if(hasValue.contains(n) == true) return false;
+	        	else hasValue.add(n);
+	        }
+	    	hasValue.clear();
+	        return true;
+
     }
 }
