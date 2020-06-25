@@ -1,5 +1,8 @@
 package main.april;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Given a non-empty array of integers, every element appears twice except for one. 
  * Find that single one.
@@ -19,10 +22,8 @@ public class UniqueNumber {
 	 */
 	public class SolutionTwoFor {
 	    public int singleNumber(int[] nums) {
-	    	
 	    	boolean duplicate  = false;
-	    	int size = nums.length;
-        
+	    	int size = nums.length;	    	
 	    	for(int i=0; i<size; i++) {
 	    		duplicate = false;
 	    		for(int j=0; j<size; j++) {
@@ -36,8 +37,23 @@ public class UniqueNumber {
 	    	return 0;	    }
 	}
 	
+	/**
+	 * Using Hashing to solve this by using key as different nos and value as their count
+	 * @author weasel
+	 *
+	 */
 	public class SolutionMap {
 	    public int singleNumber(int[] nums) {
+	    	Map<Integer, Integer> numCountMapper =  new HashMap<>();
+	    	for(int num : nums) {
+	    		if(numCountMapper.get(num) == null)
+	    			numCountMapper.put(num, 1);
+	    		else
+	    			numCountMapper.put(num, numCountMapper.get(num)+1);
+	    	}
+	    	for(int key : numCountMapper.keySet())
+	    		if(numCountMapper.get(key)==1)
+	    			return key;
 	        return 0;
 	    }
 	}
