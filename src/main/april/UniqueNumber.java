@@ -58,9 +58,21 @@ public class UniqueNumber {
 	    }
 	}
 
+	/**
+	 * Using XOR
+	 * Properties of XOR :
+	 *	1) i XOR i = 0
+	 *	2) i XOR 0 = i
+	 * 
+	 * @author weasel
+	 *
+	 */
 	public class Solution {
 	    public int singleNumber(int[] nums) {
-	        return 0;
+	    	int result = 0;
+	    	for(int num : nums)
+	    		result ^=num;
+	    	return result;
 	    }
 	}
 }
