@@ -20,30 +20,30 @@ public class UniqueNumber {
 	public class SolutionTwoFor {
 	    public int singleNumber(int[] nums) {
 	    	
-	    	return 0;
-	    }
+	    	boolean duplicate  = false;
+	    	int size = nums.length;
+        
+	    	for(int i=0; i<size; i++) {
+	    		duplicate = false;
+	    		for(int j=0; j<size; j++) {
+	    			System.out.println("comparing : i=" + nums[i] + ", j=" + nums[j]);
+	    			if(nums[i]==nums[j] && i!=j) {
+	    				duplicate=true;
+	    			}
+	    		}
+	    		if(duplicate==false) return nums[i];
+	    	}
+	    	return 0;	    }
 	}
 	
 	public class SolutionMap {
 	    public int singleNumber(int[] nums) {
-	        int[] count = new int[nums.length];
-	        for(int val : nums)
-	            count[val] = count[val] + 1;
-	        for(int i=0; i<count.length; i++)
-	            if(count[i]==1)
-	                return i;
 	        return 0;
 	    }
 	}
 
 	public class Solution {
 	    public int singleNumber(int[] nums) {
-	        int[] count = new int[nums.length];
-	        for(int val : nums)
-	            count[val] = count[val] + 1;
-	        for(int i=0; i<count.length; i++)
-	            if(count[i]==1)
-	                return i;
 	        return 0;
 	    }
 	}
