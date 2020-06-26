@@ -1,4 +1,4 @@
-package monthly;
+package leetcode.monthly;
 
 import java.util.HashMap;
 import java.util.Map;

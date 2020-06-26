@@ -1,4 +1,4 @@
-package monthly;
+package leetcode.monthly;
 
 /**
  * Given an array nums, write a function to move all 0's to the end of it 
@@ -13,7 +13,7 @@ public class ShiftZero {
 	 * 
 	 * @param nums
 	 */
-    public void moveZeroes(int[] nums) {
+    public static int[] moveZeroes(int[] nums) {
         int[] tempNum = new int[nums.length];
         int i = 0;
         for(int val : nums)
@@ -27,9 +27,11 @@ public class ShiftZero {
     	   tempNum[i]=0;
     	   i++;
         }
-        
-        nums = tempNum;
-       System.out.println(tempNum);
+        return tempNum;
     }
 
+    public static void main(String...s) {
+    	int[] nums = {0,1,0,3,12};
+    	moveZeroes(nums);
+    }
 }

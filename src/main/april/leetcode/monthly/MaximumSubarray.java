@@ -1,4 +1,4 @@
-package monthly;
+package leetcode.monthly;
 
 /**
  * Find max sum.

@@ -1,4 +1,4 @@
-package monthly;
+package leetcode.monthly;
 
 import java.util.ArrayList;
 import java.util.HashSet;
