@@ -1,4 +1,4 @@
-package main.april;
+package monthly;
 
 /**
  * Find max sum.
