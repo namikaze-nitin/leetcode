@@ -7,6 +7,8 @@ package leetcode.monthly;
  */
 public class ArrangeCoins {
 
+	static int j = 0;
+
 	/**
 	 * simple solution using while loops
 	 * @param n
@@ -21,8 +23,24 @@ public class ArrangeCoins {
     	return (n<0)?j-1:j;
     }
     
+	/**
+	 * Using mathematical formulae
+	 * @param n
+	 * @return
+	 */
+	public static int arrangeRecCoins(int n) {
+		//Approximate k value
+		long k = (long)Math.sqrt(2*(long)n);
+		//sum using this k value
+		long sum = k*(k+1)/2;
+        //calculate on basis of actual n and sum using assumed k 
+        if(sum>n)
+    		return (int)k-1;
+		else 
+	    	return (int)k;	}
+	
     public static void main(String...s) {
-    	System.out.println(arrangeCoins(5));
-    	System.out.println(arrangeCoins(8));
+    	System.out.println(arrangeRecCoins(5));
+//    	System.out.println(arrangeRecCoins(8));
     }
 }
