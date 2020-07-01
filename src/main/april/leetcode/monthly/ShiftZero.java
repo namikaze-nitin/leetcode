@@ -13,25 +13,17 @@ public class ShiftZero {
 	 * 
 	 * @param nums
 	 */
-    public static int[] moveZeroes(int[] nums) {
-        int[] tempNum = new int[nums.length];
-        int i = 0;
-        for(int val : nums)
-    	   if(val!=0) {
-               System.out.println(val);
-    		   tempNum[i] = val;
-    		   i++;
-    	   }
-       
-        while(i<nums.length) {
-    	   tempNum[i]=0;
-    	   i++;
-        }
-        return tempNum;
-    }
+    public static void moveZeroes(int[] nums) {
 
-    public static void main(String...s) {
-    	int[] nums = {0,1,0,3,12};
-    	moveZeroes(nums);
+    	int countZeroes = 0;
+    	// int size = nums.length;
+
+        for(int i = 0 ; i < nums.length ; i++) {
+            if(nums[i]==0) countZeroes++;
+    		else nums[i-countZeroes] = nums[i];
+    	}
+
+        for(int i = nums.length-countZeroes ; i < nums.length ; i++) 
+            nums[i] = 0;
     }
 }
