@@ -37,10 +37,16 @@ public class ArrangeCoins {
         if(sum>n)
     		return (int)k-1;
 		else 
-	    	return (int)k;	}
+	    	return (int)k;	
+    }
+	
+	public static int fastest(int n) {
+        //formuls  derived from k(k=1)<=2n
+        return (int)(Math.sqrt(2 * (long)n + (float)1/4) - (float)1/2);
+	}
 	
     public static void main(String...s) {
-    	System.out.println(arrangeRecCoins(5));
-//    	System.out.println(arrangeRecCoins(8));
+    	System.out.println(fastest(5));
+    	System.out.println(fastest(8));
     }
 }
