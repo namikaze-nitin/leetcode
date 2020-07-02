@@ -12,41 +12,35 @@ import java.util.Queue;
  *
  */
 public class LevelOrderTreeTraversal {
-
-    public static List<List<Integer>> levelOrderBottom(TreeNode root) {
      
+    public List<List<Integer>> levelOrderBottom(TreeNodes root) {
+        
     	List<List<Integer>> levelOrderList = new ArrayList<>();
-    	Queue<TreeNode> queue = new LinkedList<TreeNode>();
+        if(root==null) return levelOrderList;
+    	Queue<TreeNodes> queue = new LinkedList<TreeNodes>();
     	queue.add(root);
     	
     	while(!queue.isEmpty()) {
-    		
     		ArrayList<Integer> levelVal = new ArrayList<>();
-    		ArrayList<TreeNode> levelNode = new ArrayList<>();
+    		ArrayList<TreeNodes> levelNode = new ArrayList<>();
+    		
     		while(!queue.isEmpty()){
-    			TreeNode tempNode  = queue.poll();
-    			levelVal.add(tempNode.getVal());
-    			levelNode.add(tempNode);
+    			TreeNodes tempNode  = queue.poll();
+    			levelVal.add(tempNode.val);
+    			if(tempNode.left!=null)levelNode.add(tempNode.left);
+    			if(tempNode.right!=null)levelNode.add(tempNode.right);
     		}
+    		
     		queue.addAll(levelNode);
+    		
     		levelOrderList.add(levelVal);
     	}
-    	
-    	return levelOrderList;
-    }
-    
-    public static void main(String...s) {
-    	TreeNode three = new TreeNode();
-    	TreeNode nine = new TreeNode();
-    	TreeNode seven = new TreeNode();
-    	TreeNode twenty = new TreeNode();
-    	TreeNode fifteen = new TreeNode();
-    	
-    	twenty.setRight(seven);
-    	twenty.setLeft(fifteen);
-    	three.setLeft(nine);
-    	three.setRight(twenty);
-    	
-    	System.out.println(levelOrderBottom(three).size());;
+        
+    	List<List<Integer>> finalOrderList = new ArrayList<>();
+    	int size = levelOrderList.size();
+    	for(int i=0; i<size; i++)
+    		finalOrderList.add(levelOrderList.get(size-i-1));
+    	    	
+    	return finalOrderList;
     }
 }
