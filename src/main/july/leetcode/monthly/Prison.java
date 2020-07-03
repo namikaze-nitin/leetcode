@@ -13,29 +13,37 @@ package leetcode.monthly;
  */
 public class Prison {
 	
-    public int[] prisonAfterNDays(int[] cells, int N) {
+	/**
+	 * Normal solution using for loops resulting in time limit exceed for very large N
+	 * @param cells
+	 * @param N
+	 * @return
+	 */
+    public static int[] prisonAfterNDays(int[] cells, int N) {
      
     	int size = cells.length;
     	
 		int[] temp = new int[size];
 		temp[0] = 0; temp[size-1] = 0; //since first and last dont hv adjacent nodes
 
+		int j = 1;
 		while(N>0) {
+			
 			for(int i=1 ; i < size-1 ; i++) {
 				if((cells[i-1]==0 && cells[i+1]==0)	||	(cells[i-1]==1 && cells[i+1]==1))
 					temp[i] = 1;
 				else 
-					temp[i] = 0;
-				
-				if(i>1) //copy temp array into cells for next stage
-					cells[i-2] = temp[i-2];
+					temp[i] = 0;				
 	    	}
+			
 			N--;
-			
-			
-//	        for (int i=0; i<size; i++) //or use iteration
-//	        	cells[i] = temp[i]; 
-			
+			System.out.print(j + " : ");
+	        for (int i=0; i<size; i++) {
+	        	cells[i] = temp[i];
+	        	System.out.print(cells[i]+" ");
+	        }
+	        System.out.println();
+	        j++;
 		}
     	return cells;
     }
