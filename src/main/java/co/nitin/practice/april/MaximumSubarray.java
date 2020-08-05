@@ -1,4 +1,4 @@
-package leetcode.monthly;
+package co.nitin.practice.april;
 
 /**
  * Find max sum.

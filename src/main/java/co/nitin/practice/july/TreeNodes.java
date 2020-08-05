@@ -1,4 +1,4 @@
-package leetcode.monthly;
+package co.nitin.practice.july;
 
 public class TreeNodes {
      int val;

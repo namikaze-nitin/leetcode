@@ -1,4 +1,4 @@
-package leetcode.monthly;
+package co.nitin.practice.july;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

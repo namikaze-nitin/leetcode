@@ -1,4 +1,4 @@
-package leetcode.monthly;
+package co.nitin.practice.july;
 
 /**
  * There are 8 prison cells in a row, and each cell is either occupied or vacant.

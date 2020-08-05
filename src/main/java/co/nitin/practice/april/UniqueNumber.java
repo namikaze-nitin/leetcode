@@ -1,4 +1,4 @@
-package leetcode.monthly;
+package co.nitin.practice.april;
 
 import java.util.HashMap;
 import java.util.Map;
