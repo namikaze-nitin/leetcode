@@ -27,19 +27,19 @@ class WordDictionary {
 	public Set<String> getDictionary() {
 		return dictionary;
 	}
+
+   public static void main(String...s) {
+	   	 WordDictionary obj = new WordDictionary();
+	   	 obj.addWord("bad");
+	   	 System.out.println(obj.getDictionary());
+	   	 obj.addWord("dad");
+	   	 System.out.println(obj.getDictionary());
+	   	 obj.addWord("mad");
+	   	 System.out.println(obj.getDictionary());
+	   	 System.out.println();   	 
+	   	 System.out.println(obj.search("pad") + " : " + obj.search("bad") + " : " 
+	   			 		+	obj.search(".ad") + " : " +	 obj.search("b.."));
+	}
+
 }
 
-class Runner {
-    public static void main() {
-   	 WordDictionary obj = new WordDictionary();
-   	 obj.addWord("bad");
-   	 System.out.println(obj.getDictionary());
-   	 obj.addWord("dad");
-   	 System.out.println(obj.getDictionary());
-   	 obj.addWord("mad");
-   	 System.out.println(obj.getDictionary());
-   	 System.out.println();   	 
-   	 System.out.println(obj.search("pad") + " : " + obj.search("bad") + " : " 
-   			 		+	obj.search(".ad") + " : " +	 obj.search("b.."));
-	}
-}
