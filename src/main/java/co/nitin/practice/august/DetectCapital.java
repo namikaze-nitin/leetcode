@@ -12,9 +12,29 @@ package co.nitin.practice.august;
  * @author weasel
  *
  */
+
+//fastest
 public class DetectCapital {
 	
-    public static boolean detectCapitalUse(String word) {
+	public static boolean oneLoop(String word) {
+		
+		if(word.length()==1) return true;
+		int count = 0;
+		for(int i = 0; i < word.length(); i++) {
+			if(Character.isUpperCase(word.charAt(i)))
+				count++;
+		}
+		
+		if(count == word.length() || count == 0 || (count == 1 && Character.isUpperCase(word.charAt(0)))) return true;
+		
+		return false;
+	}
+	
+	public static boolean detectCapitalUse(String word) {
+        return word.matches("[A-Z]*|.[a-z]*");
+	}
+	
+    public static boolean detectCapitalUseFor(String word) {
     	
     	int length = word.length();
 		if(length==1) return true;
