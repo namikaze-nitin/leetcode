@@ -1,14 +1,15 @@
 package co.nitin.practice.august;
 
 import java.util.HashMap;
+import java.util.Map;
 
 class MyHashSet {
 
-	private HashMap<Integer, Boolean> map;
+	private Map<Integer, Boolean> map;
 	
     /** Initialize your data structure here. */
     public MyHashSet() {
-        map = new HashMap<>();
+        map = new HashMap(1000, (float)0.75);
     }
     
     public void add(int key) {
