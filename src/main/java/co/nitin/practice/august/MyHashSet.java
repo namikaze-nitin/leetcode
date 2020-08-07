@@ -9,7 +9,7 @@ class MyHashSet {
 	
     /** Initialize your data structure here. */
     public MyHashSet() {
-        map = new HashMap(1000, (float)0.75);
+        map = new HashMap<Integer, Boolean>(1000, 1);
     }
     
     public void add(int key) {

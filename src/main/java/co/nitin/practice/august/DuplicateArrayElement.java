@@ -23,19 +23,14 @@ public class DuplicateArrayElement {
 
     public List<Integer> findDuplicatesUsingMap(int[] nums) {
 
-    	Map<Integer, Integer> map = new HashMap<Integer, Integer>();
+    	Map<Integer, Boolean> map = new HashMap<Integer, Boolean>();
+    	ArrayList<Integer> list = new ArrayList<>();
     	for(int val : nums) {
     		if(map.get(val)==null)
-    			map.put(val, 0);
-    		else map.put(val, map.get(val)+1);
+    			map.put(val, true);
+    		else list.add(val);
     	}
 
-    	ArrayList<Integer> list = new ArrayList<>();
-
-    	for(int key : map.keySet())
-    		if(map.get(key)==1)
-    			list.add(key);
-    		
     	return list;
     }
 }
